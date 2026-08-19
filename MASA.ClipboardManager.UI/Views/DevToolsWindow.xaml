@@ -1,0 +1,93 @@
+<Window x:Class="MASA.ClipboardManager.UI.Views.DevToolsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MASA Developer Utilities" Height="600" Width="850"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BgDarkBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <TextBlock Text="⚡ Developer Text &amp; Encoding Utilities" FontSize="18" FontWeight="Bold" />
+            <TextBlock Text="Instant JSON formatting, URL/Base64/HTML encodings, and line operations" FontSize="12" Foreground="{DynamicResource TextSecondaryBrush}" />
+        </StackPanel>
+
+        <!-- Main Workspace (Left: Input, Middle: Actions, Right: Output) -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Input Box -->
+            <Border Grid.Column="0" Background="{DynamicResource CardDarkBrush}" BorderBrush="{DynamicResource BorderDarkBrush}" BorderThickness="1" CornerRadius="8" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Input Content:" FontWeight="SemiBold" FontSize="12" Margin="0,0,0,6" />
+                    <TextBox Grid.Row="1" Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Background="Transparent" Foreground="{DynamicResource TextPrimaryBrush}" BorderThickness="0" FontFamily="Cascadia Code, Consolas" FontSize="12" />
+                </Grid>
+            </Border>
+
+            <!-- Tools Toolbar -->
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" Margin="10,0">
+                <StackPanel>
+                    <TextBlock Text="JSON" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMutedBrush}" Margin="4,0,0,4" />
+                    <Button Command="{Binding FormatJsonCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Format JSON" /></Button>
+                    <Button Command="{Binding MinifyJsonCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,8"><TextBlock Text="Minify JSON" /></Button>
+
+                    <TextBlock Text="ENCODE / DECODE" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMutedBrush}" Margin="4,0,0,4" />
+                    <Button Command="{Binding Base64EncodeCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Base64 Encode" /></Button>
+                    <Button Command="{Binding Base64DecodeCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Base64 Decode" /></Button>
+                    <Button Command="{Binding UrlEncodeCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="URL Encode" /></Button>
+                    <Button Command="{Binding UrlDecodeCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="URL Decode" /></Button>
+                    <Button Command="{Binding HtmlEncodeCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="HTML Encode" /></Button>
+                    <Button Command="{Binding HtmlDecodeCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,8"><TextBlock Text="HTML Decode" /></Button>
+
+                    <TextBlock Text="LINES &amp; TEXT" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMutedBrush}" Margin="4,0,0,4" />
+                    <Button Command="{Binding TrimLinesCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Trim Lines" /></Button>
+                    <Button Command="{Binding RemoveDuplicatesCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Deduplicate" /></Button>
+                    <Button Command="{Binding RemoveEmptyLinesCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Remove Empty" /></Button>
+                    <Button Command="{Binding SortLinesAscCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Sort A-Z" /></Button>
+                    <Button Command="{Binding SortLinesDescCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="Sort Z-A" /></Button>
+                    <Button Command="{Binding UpperCaseCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,4"><TextBlock Text="UPPERCASE" /></Button>
+                    <Button Command="{Binding LowerCaseCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,0,8"><TextBlock Text="lowercase" /></Button>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Output Box -->
+            <Border Grid.Column="2" Background="{DynamicResource CardDarkBrush}" BorderBrush="{DynamicResource BorderDarkBrush}" BorderThickness="1" CornerRadius="8" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Transformed Output:" FontWeight="SemiBold" FontSize="12" Margin="0,0,0,6" />
+                    <TextBox Grid.Row="1" Text="{Binding OutputText, Mode=OneWay}" IsReadOnly="True" TextWrapping="Wrap" Background="Transparent" Foreground="{DynamicResource TextPrimaryBrush}" BorderThickness="0" FontFamily="Cascadia Code, Consolas" FontSize="12" />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Bottom Action Bar -->
+        <Border Grid.Row="2" Margin="0,12,0,0" Padding="0,8,0,0">
+            <Grid>
+                <TextBlock Text="{Binding StatusMessage}" FontSize="12" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{Binding SwapInputOutputCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,8,0"><TextBlock Text="🔄 Swap In/Out" /></Button>
+                    <Button Command="{Binding ClearAllCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,8,0"><TextBlock Text="🗑️ Clear" /></Button>
+                    <Button Command="{Binding CopyOutputCommand}" Style="{DynamicResource ModernButtonStyle}"><TextBlock Text="📋 Copy Output" /></Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

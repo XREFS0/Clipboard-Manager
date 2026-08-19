@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:MASA.ClipboardManager.UI.Converters">
+
+    <converters:ContentTypeToIconConverter x:Key="ContentTypeToIconConverter" />
+    <converters:ContentTypeToColorConverter x:Key="ContentTypeToColorConverter" />
+    <converters:TimeAgoConverter x:Key="TimeAgoConverter" />
+    <converters:FileSizeConverter x:Key="FileSizeConverter" />
+    <converters:ImagePathToBitmapConverter x:Key="ImagePathToBitmapConverter" />
+    <converters:BooleanToFavoriteStarConverter x:Key="BooleanToFavoriteStarConverter" />
+    <converters:BooleanToPinIconConverter x:Key="BooleanToPinIconConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+</ResourceDictionary>

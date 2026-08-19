@@ -1,0 +1,23 @@
+## Build and Output Folders
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio & Rider
+.vs/
+.idea/
+*.DotSettings.user
+
+## Temporary files
+*.log
+*.tmp
+TestResults/
+
+## Local App Data / Storage created during run
+MASA.ClipboardManager/Storage/
+MASA.ClipboardManager/Images/
+*.db-shm
+*.db-wal

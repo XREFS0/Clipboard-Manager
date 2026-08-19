@@ -1,0 +1,53 @@
+<Window x:Class="MASA.ClipboardManager.UI.Views.TextEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MASA Snippet Editor" Height="550" Width="700"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BgDarkBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Quick Transform Bar -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Command="{Binding FormatJsonCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,6,0"><TextBlock Text="{}{ } Format JSON" /></Button>
+            <Button Command="{Binding TrimSpacesCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,6,0"><TextBlock Text="Trim Spaces" /></Button>
+            <Button Command="{Binding RemoveDuplicatesCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,6,0"><TextBlock Text="Deduplicate" /></Button>
+            <Button Command="{Binding SortLinesCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,6,0"><TextBlock Text="Sort A-Z" /></Button>
+            <Button Command="{Binding UpperCaseCommand}" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,6,0"><TextBlock Text="UPPER" /></Button>
+            <Button Command="{Binding LowerCaseCommand}" Style="{DynamicResource GhostButtonStyle}"><TextBlock Text="lower" /></Button>
+        </StackPanel>
+
+        <!-- Text Box Area -->
+        <Border Grid.Row="1" Background="{DynamicResource CardDarkBrush}" BorderBrush="{DynamicResource BorderDarkBrush}" BorderThickness="1" CornerRadius="8" Padding="10">
+            <TextBox Text="{Binding EditorText, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Background="Transparent" Foreground="{DynamicResource TextPrimaryBrush}" BorderThickness="0" FontFamily="Cascadia Code, Consolas" FontSize="13" />
+        </Border>
+
+        <!-- Find / Replace Row -->
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Style="{DynamicResource ModernSearchBoxStyle}" Text="{Binding FindText, UpdateSourceTrigger=PropertyChanged}" Tag="Find..." Margin="0,0,6,0" />
+            <TextBox Grid.Column="1" Style="{DynamicResource ModernSearchBoxStyle}" Text="{Binding ReplaceText, UpdateSourceTrigger=PropertyChanged}" Tag="Replace with..." Margin="0,0,6,0" />
+            <Button Grid.Column="2" Command="{Binding ReplaceAllCommand}" Style="{DynamicResource GhostButtonStyle}"><TextBlock Text="Replace All" /></Button>
+        </Grid>
+
+        <!-- Footer Actions -->
+        <Grid Grid.Row="3" Margin="0,12,0,0">
+            <TextBlock Text="{Binding StatusMessage}" FontSize="12" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="BtnCancel" Click="Cancel_Click" Style="{DynamicResource GhostButtonStyle}" Margin="0,0,8,0"><TextBlock Text="Cancel" /></Button>
+                <Button Command="{Binding SaveAndCopyCommand}" Style="{DynamicResource ModernButtonStyle}"><TextBlock Text="💾 Save &amp; Copy" /></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

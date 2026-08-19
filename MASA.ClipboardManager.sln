@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.ClipboardManager.Core", "MASA.ClipboardManager.Core\MASA.ClipboardManager.Core.csproj", "{D6944EC9-4483-4E85-AA27-49A1C8159B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.ClipboardManager.Application", "MASA.ClipboardManager.Application\MASA.ClipboardManager.Application.csproj", "{868E7D53-BBD5-4C44-AE93-EDA40CD21055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.ClipboardManager.Infrastructure", "MASA.ClipboardManager.Infrastructure\MASA.ClipboardManager.Infrastructure.csproj", "{C7945486-1A2E-4819-829B-CCA61DD97066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.ClipboardManager.UI", "MASA.ClipboardManager.UI\MASA.ClipboardManager.UI.csproj", "{482156E0-EFD1-4DA8-827F-6425A2F15FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.ClipboardManager.Tests", "MASA.ClipboardManager.Tests\MASA.ClipboardManager.Tests.csproj", "{0B5D6C70-002D-4617-BAFF-75B08138ED2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.ClipboardManager.Capture", "MASA.ClipboardManager.Capture\MASA.ClipboardManager.Capture.csproj", "{AEA0BFAF-180B-483B-A389-2D18D32E5F55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6944EC9-4483-4E85-AA27-49A1C8159B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6944EC9-4483-4E85-AA27-49A1C8159B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6944EC9-4483-4E85-AA27-49A1C8159B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6944EC9-4483-4E85-AA27-49A1C8159B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{868E7D53-BBD5-4C44-AE93-EDA40CD21055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868E7D53-BBD5-4C44-AE93-EDA40CD21055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868E7D53-BBD5-4C44-AE93-EDA40CD21055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868E7D53-BBD5-4C44-AE93-EDA40CD21055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7945486-1A2E-4819-829B-CCA61DD97066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7945486-1A2E-4819-829B-CCA61DD97066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7945486-1A2E-4819-829B-CCA61DD97066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7945486-1A2E-4819-829B-CCA61DD97066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482156E0-EFD1-4DA8-827F-6425A2F15FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482156E0-EFD1-4DA8-827F-6425A2F15FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482156E0-EFD1-4DA8-827F-6425A2F15FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482156E0-EFD1-4DA8-827F-6425A2F15FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B5D6C70-002D-4617-BAFF-75B08138ED2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B5D6C70-002D-4617-BAFF-75B08138ED2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B5D6C70-002D-4617-BAFF-75B08138ED2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B5D6C70-002D-4617-BAFF-75B08138ED2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA0BFAF-180B-483B-A389-2D18D32E5F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA0BFAF-180B-483B-A389-2D18D32E5F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA0BFAF-180B-483B-A389-2D18D32E5F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA0BFAF-180B-483B-A389-2D18D32E5F55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
